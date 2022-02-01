@@ -1,10 +1,20 @@
 import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config'
+import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { UserModule } from './user/user.module';
 
 @Module({
-  imports: [],
+  imports: [
+    UserModule,
+    ConfigModule.forRoot({
+      envFilePath: `.${process.env.NODE_ENV}.env`
+    }),
+    MongooseModule.forRoot('mongodb://localhost/dii-consentes')
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
+
 export class AppModule {}
