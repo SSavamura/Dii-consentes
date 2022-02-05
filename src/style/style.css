@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+button a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+}
+   /* шапка */
+header {
+    display: flex;
+    justify-content: center;
+    border-bottom: solid black 1px;
+    margin-top: 30px;
+    margin-bottom: 75px;
+}
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+.header {
+    display: flex;
+    flex-direction: row;
+}
+header ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin-left: 220px;
+}
+header ul a {
+    margin: 45px;
+    text-decoration: none;
+}
+/* тело */
+ main {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+ }
+ 

@@ -1,0 +1,40 @@
+.form_autorization {
+    display: flex;
+    flex-direction: column;
+}
+.button_autorization {
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+}
+.button_autorization button {
+    margin: 23px;
+}
+#autorization {
+    display: flex;
+    flex-direction: column;
+
+}
+#autorization p{
+   align-self: center;
+}
+
+#autorization input{
+   margin-bottom: 25px;
+   width: 300px;
+   height: 25px;
+   background-color: #C2DCEE;
+
+}
+.icons {
+   align-self: center;
+}
+.icons img {
+   margin: 10px;
+}
+input {
+    background-color: #C2DCEE;
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 5px;
+  }
