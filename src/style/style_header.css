@@ -1,38 +1,112 @@
 body {
     font-family: 'Montserrat', sans-serif;
 }
-button a {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    text-decoration: none;
-    font-size: 14px;
-}
 a {
     font-size: 14px;
+    color: black;
 }
    /* шапка */
 header {
     display: flex;
     justify-content: center;
     border-bottom: solid black 1px;
-    margin-top: 30px;
-    margin-bottom: 75px;
+    margin: 44px auto;
+    max-width: 85%;
+    box-sizing: border-box;
+    align-items: center;
+    padding-bottom: 20px;
 }
 h1 {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
+    padding-left: 5px;
 }
 .header {
     display: flex;
     flex-direction: row;
 }
 header ul {
-    list-style: none;
+    list-style-type: none;
     display: flex;
     flex-direction: row;
     margin-left: 220px;
+    justify-content: center;
+    align-items: center;
 }
 header ul a {
-    margin: 45px;
     text-decoration: none;
+    display: block;
+}
+header ul li {
+    display: inline-block;
+    margin-right: 75px;
+}
+header .btns {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    align-items: center;
+    background-color: #FFC973;
+    border-radius: 24px;
+    -webkit-transition: all .4s ease;
+    -o-transition: all;
+    transition: all .4s ease;
+}
+header .btns:hover {
+    background-color: #FFFFB7;
+}
+
+header .btns>a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    padding: 5px 5px;
+    padding: 6px 16px;
+    }
+/* Подвал сайта */
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-top: solid black 1px;
+    margin: 44px auto;
+    max-width: 85%;
+    box-sizing: border-box;
+    align-items: center;
+    padding-top: 20px;
+}
+footer nav {
+    display: flex;
+    flex-direction: row;
+
+}
+footer ul {
+    list-style-type: none;
+    padding-left: 70px;
+    padding-right: 70px;
+}
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: baseline;
+}
+.logo p, .logo {
+    padding-left: 10px;
+}
+.icons_contact {
+    display: flex;
+    flex-direction: row;
+    align-self: baseline;
+    align-items: center;
+}
+.icons_contact img {
+    padding-left: 15px;
+}
+.add_info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding-bottom: 20px;
 }
