@@ -5,14 +5,14 @@
 <link rel="stylesheet" href="../style/style_header.css">
 <link rel="stylesheet" href="../style/style_form.css">
 <link rel="stylesheet" href="../style/style_button.css">
+<link rel="stylesheet" href="../style/style_pers_area.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet"> 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalabel=no"/>
 <title>Самотой.com</title>
-</head>
-<body>
+</head> 
 <header>
     <a href="/"><img class="logo" src="../style/icons/logo.svg" alt="invalid"></a>
      <h1>Dii Consentes</h1>
@@ -25,26 +25,35 @@
         <a href="" class="button_enter">Войти</a>
     </div>
 </header>
-<main id="autorization">
-    <div class="form_autorization">
-        <div class="button_autorization">
-        <button><a href="#">Вход</a></button>
-        <button><a href="#">Регистрация</a></button>
+<main id="personality_area">
+    <h2>Личный кабинет</h2>
+    <div class="pers_area">
+        <div class="links">
+            <ul>
+                <li><a href="#">Личные данные</a></li>
+                <li><a href="#">Мои тестирования</a></li>
+                <li><a href="#">История тестов</a></li>
+            </ul>
         </div>
-        <form action="#" id="autorization">
-            <label for="email">E-mail</label>
-            <input type="email" id="email" placeholder="anutazaika@mail.ru" required>
-            <label for="password">Пароль</label>
-            <input type="password" id="password" required>
-            <input type="submit" value="Войти">
-            <p><a href="#">Еще нет аккаунта?</a></p>
-            <p>Войти через:</p>
-            <div class="icons">
-                <img alt="gmail" src="../style/icons/icon_facebook.svg">
-                <img alt="facebook" src="../style/icons/icon_gmail.svg">
-            </div>
-        </form>
-    </div>
+        <div class="pers_info">
+            <form action="">
+                <label for="login">ID</label>
+                <input type="text" id="login" value="#14214">
+                <label for="email" >E-mail</label>
+                <input id="email" type="email" value="iliatortuga@mail.ru">
+                <label for="pass">Пароль</label>
+                <input id="pass" type="password" value="**********">
+                <label for="phone_number">Телефон</label>
+                <input id="phone_number" type="tel" value="+8(800)-555-35-35">
+            </form>
+        </div>
+        <div class="photo">
+        <div class="edit_photo">
+            <img alt="pers_photo" src="../style/icons/logo.svg">
+            <p>Фотография профиля</p>
+        </div>
+            <button><a href="#">Заменить</a></button>
+        </div>
 </main>
 <footer>
     <div class="logo">

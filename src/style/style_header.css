@@ -15,6 +15,7 @@ header {
     box-sizing: border-box;
     align-items: center;
     padding-bottom: 20px;
+    justify-content: space-between;
 }
 h1 {
     font-family: 'Montserrat', sans-serif;
@@ -39,7 +40,7 @@ header ul a {
 }
 header ul li {
     display: inline-block;
-    margin-right: 75px;
+    margin-right: 50px;
 }
 header .btns {
     display: -webkit-flex;

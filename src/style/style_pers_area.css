@@ -1,0 +1,58 @@
+
+#personality_area {
+    display: flex;
+    flex-direction: column;
+}
+.pers_area {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 100%;
+    justify-content: space-around;
+}
+.links {
+    display: flex;
+    flex-direction: column;
+    background-image: url(../style/icons/BackForPersArea.svg);
+    width: 375px;
+    height: 810px;
+}
+.pers_info {
+    display: flex;
+    flex-direction: column;
+}
+.photo {
+    display: flex;
+    flex-direction: column;
+    align-self: baseline;
+}
+.edit_photo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.edit_photo p {
+    padding-left: 5px;
+}
+ul {
+    list-style-type: none;
+    padding: 0px 0px 0px 50px;
+}
+.links ul li {
+    padding-top: 40px;
+}
+
+
+.links ul li a {
+    font-size: 20px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+.links ul li:first-child a:first-child{
+    color: #6ad6b2;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
