@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<link rel="stylesheet" href="../style/style.css">
-<link rel="stylesheet" href="../style/style_header.css">
-<link rel="stylesheet" href="../style/style_form.css">
-<link rel="stylesheet" href="../style/style_button.css">
+<link rel="stylesheet" href="style/style.css">
+<link rel="stylesheet" href="style/style_header.css">
+<link rel="stylesheet" href="style/style_form.css">
+<link rel="stylesheet" href="style/style_button.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet"> 
@@ -14,7 +14,7 @@
 </head>
 <body>
 <header>
-    <a href="/"><img class="logo" src="../style/icons/logo.svg" alt="invalid"></a>
+    <a href="/"><img class="logo" src="style/icons/logo.svg" alt="invalid"></a>
      <h1>Dii Consentes</h1>
      <ul>
     <li><a href="#">Главная</a></li>
@@ -31,24 +31,24 @@
         <button><a href="#">Вход</a></button>
         <button><a href="#">Регистрация</a></button>
         </div>
-        <form action="#" id="autorization">
+        <form action="localhost:5000/auth/login" method="post" id="autorization" name="autorization" enctype="multipart/form-data">
             <label for="email">E-mail</label>
-            <input type="email" id="email" placeholder="anutazaika@mail.ru" required>
+            <input type="email" id="email" name="email" placeholder="iliatortuga@gmail.com" required>
             <label for="password">Пароль</label>
-            <input type="password" id="password" required>
+            <input type="password" id="password" name="password required>
             <input type="submit" value="Войти">
             <p><a href="#">Еще нет аккаунта?</a></p>
             <p>Войти через:</p>
             <div class="icons">
-                <img alt="gmail" src="../style/icons/icon_facebook.svg">
-                <img alt="facebook" src="../style/icons/icon_gmail.svg">
+                <img alt="gmail" src="style/icons/icon_facebook.svg">
+                <img alt="facebook" src="style/icons/icon_gmail.svg">
             </div>
         </form>
     </div>
 </main>
 <footer>
     <div class="logo">
-    <a href="/"><img class="logo" src="../style/icons/logo.svg" alt="invalid"></a>
+    <a href="/"><img class="logo" src="style/icons/logo.svg" alt="invalid"></a>
     <p>Dii Consentes</p>
     </div>
     <nav>
@@ -64,9 +64,9 @@
             <li><a>Поддержка</a></li>
         </ul>
         <div class="icons_contact">
-            <a href="#"><img alt="whatsup" src="../style/icons/whatsup.svg"></a>
-            <a href="#"><img alt="gmail" src="../style/icons/gmail.svg"></a>
-            <a href="#"><img alt="telegram" src="../style/icons/telegram.svg"></a>
+            <a href="#"><img alt="whatsup" src="style/icons/whatsup.svg"></a>
+            <a href="#"><img alt="gmail" src="style/icons/gmail.svg"></a>
+            <a href="#"><img alt="telegram" src="style/icons/telegram.svg"></a>
         </div>
     </nav>
 </footer>
