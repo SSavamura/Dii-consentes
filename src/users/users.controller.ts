@@ -5,7 +5,7 @@ import { RoleGuard } from 'src/auth/roles.guard';
 import { ChangeRoleDto } from './dto/change-role.dto';
 import { CreateUserDto } from './dto/create-user.dto';
 import { Role } from './role.enum';
-import { User } from './user.schema';
+import { User } from './users.schema';
 import { UserService } from './users.service';
 
 @Controller('users')
