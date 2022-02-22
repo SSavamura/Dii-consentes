@@ -13,7 +13,7 @@
 .links {
     display: flex;
     flex-direction: column;
-    background-image: url(../style/icons/BackForPersArea.svg);
+    background-image: url(../icons/BackForPersArea.svg);
     width: 375px;
     height: 810px;
 }
