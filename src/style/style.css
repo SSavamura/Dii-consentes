@@ -26,4 +26,38 @@ a {
  h2 {
      align-self: center;
  }
+
+#page_between_test {
+     display: flex;
+     flex-direction: column;
+     max-width: 34%;
+ }
+ .description_motivation {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+ }
+ .description_motivation p{
+    font-size: 55px;
+    color: #005CA0;
+    padding-bottom: 40px;
+ }
+ .description_motivation span {
+    padding-left: 124px;
+ }
+ .description_motivation button {
+    margin-top: 30px;
+    margin-right: 202px;
+ }
+ .crumbs {
+     display: flex;
+     flex-direction: row;
+     align-self: center;
+     padding-bottom: 60px;
+ }
+ .crumbs p {
+     padding-left: 7px;
+     padding-right: 7px;
+     color: black;
+ }
  
