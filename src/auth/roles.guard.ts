@@ -1,6 +1,7 @@
 import { CanActivate, ExecutionContext, HttpException, HttpStatus, Injectable, UnauthorizedException } from "@nestjs/common";
 import { Reflector } from "@nestjs/core";
 import { JwtService } from "@nestjs/jwt";
+import { Request } from "express";
 import { Observable } from "rxjs";
 import { Role } from "src/users/role.enum";
 import { ROLES_KEY } from "./roles-auth.decorator";
@@ -25,9 +26,10 @@ export class RoleGuard implements CanActivate {
 			}
 
 			const req = context.switchToHttp().getRequest()
-			const authHeader = req.headers.authorization.split(' ')
-			const bearer = authHeader[0]
-			const token = authHeader[1]
+			const authToken = req.session.get('token')
+
+			const bearer = authToken[0]
+			const token = authToken[1]
 
 			if (bearer !== 'Bearer' || !token) {
 				throw new UnauthorizedException({message: 'Пользователь не авторизован'})
