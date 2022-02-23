@@ -20,11 +20,11 @@ export class AppController {
   	@Get('personal_area')
   	@Render('personal-area_pers_inf')
   	async personalArea(@Req() req) {
-		const email = req.session.get('userEmail')
-		const user = await this.userService.getUserByEmail(email)
+		const userId = req.session.get('userId')
+		const user = await this.userService.getUserById(userId)
 	
 		return { 
-			userId: user.id, 
+			userId: user.id,
 			userEmail: user.email
 		}
   	}

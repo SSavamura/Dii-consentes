@@ -1,25 +1,27 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { ObjectId } from 'bson';
-import { Document } from 'mongoose';
+import { Document, Schema as MongooseSchema } from 'mongoose';
+import { City } from 'src/city/city.schema';
 import { Org } from 'src/org/org.schema';
 import { Role } from './role.enum';
-
-// export type UserDocument = User & Document;
 
 @Schema()
 export class User extends Document {
 
-	@Prop({required: true, unique: true})
+	@Prop({ required: true, unique: true })
 	email: string;
 
-	@Prop({required: true, unique: true})
+	@Prop({ required: true })
 	password: string;
 
-	@Prop({enum: Role, default: Role.User})
+	@Prop({ required: true, enum: Role, default: Role.User })
 	role: string;
 	
-	@Prop({required: true, ref: Org.name})
-	org: ObjectId;
+	@Prop({ ref: Org.name })
+	orgId: MongooseSchema.Types.ObjectId;
+
+	@Prop({ ref: City.name })
+	cityId: MongooseSchema.Types.ObjectId;;
+
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

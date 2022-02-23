@@ -1,6 +1,5 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { STATUS_CODES } from 'http';
 import { Model } from 'mongoose';
 import { City } from './city.schema';
 import { CityDto } from './dto/city.dto';
@@ -15,12 +14,22 @@ export class CityService {
         return createdCity.save();
     }
 
-    async delete(cityDto: CityDto) {
-        this.cityModel.deleteOne({ name: cityDto.name},
-            function (err) {
-                if (err) throw new HttpException('Error', HttpStatus.CONFLICT);
-                return HttpStatus.OK;
-            });
+    async getAll(): Promise<City[]> {
+		return this.cityModel.find().exec();
+	}
 
+    async delete(cityDto: CityDto) {
+        const city = await this.cityModel.findOne({ name: cityDto.name})
+
+        if (!city) {
+            throw new HttpException('Error', HttpStatus.NOT_FOUND)
+        }
+
+        return await city.delete();
     }
+
+    async getCityById(cityId: string) {
+		return this.cityModel.findById(cityId)
+	}
+
 }

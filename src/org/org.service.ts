@@ -14,7 +14,6 @@ export class OrgService {
         return createdOrg.save();
     }
 
-
     async delete(orgDto: OrgDto) {
         this.orgModel.deleteOne({ name: orgDto.name},
             function (err) {
