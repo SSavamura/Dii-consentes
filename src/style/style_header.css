@@ -21,6 +21,7 @@ h1 {
     font-weight: bold;
     padding-left: 5px;
     color: #006BB9;
+    font-size: 24px;
 }
 .header {
     display: flex;
