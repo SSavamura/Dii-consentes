@@ -8,6 +8,7 @@ import * as secureSession from 'fastify-secure-session';
 import { Roles } from './roles-auth.decorator';
 import { RoleGuard } from './roles.guard';
 
+
 @Controller('auth')
 export class AuthController {
 
