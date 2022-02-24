@@ -1,5 +1,6 @@
 export class TestDto {
 
     readonly name: string;
-    readonly blocks: Array<Object>;
+    readonly blocksId: Array<String>;
+    
 }

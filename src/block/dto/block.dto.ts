@@ -1,8 +1,17 @@
-import { TimeInterval } from "rxjs/internal/operators/timeInterval";
-
 export class BlockDto {
 
-    readonly info: Array<Object>;
-    readonly question: Array<Object>;
+    readonly name: string;
+    
+    readonly info: {
+        title: string,
+        discription: string
+    };
+
+    readonly question: [{
+        text: string, //текст вопроса
+        answer: string[], //ответы
+        correct: number, //правильный
+        img?: string, //кортинка, если нужно
+    }];
 
 }
