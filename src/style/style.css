@@ -47,6 +47,7 @@ h1{
     font-size: 55px;
     color: #005CA0;
     padding-bottom: 40px;
+    max-width: 58%;
  }
  .description_motivation span {
     padding-left: 124px;
@@ -60,6 +61,7 @@ h1{
      flex-direction: row;
      align-self: center;
      padding-bottom: 60px;
+     max-width: 58%;
  }
  .crumbs p {
      padding-left: 7px;
