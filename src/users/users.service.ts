@@ -23,21 +23,21 @@ export class UserService {
 		return this.userModel.find().exec();
 	}
 
-	async getUserByEmail(email: String) {
-		return await this.userModel.findOne({email: email})
+	async getUserByEmail(email: String): Promise<User> {
+		return this.userModel.findOne({email: email})
 	}
 
-	async getUserById(id: String) {
-		return await this.userModel.findById(id)
+	async getUserById(id: String): Promise<User> {
+		return this.userModel.findById(id)
 	}
 
-	async changeRole(dto: ChangeRoleDto) {
+	async changeRole(dto: ChangeRoleDto): Promise<User> {
 		try {
 			const user = await this.userModel.findById(dto.userId)
 
 			if (user && dto.value in Role) {
 				user.role = dto.value
-				return await user.save()
+				return user.save()
 			}
 		} catch (error) {
 			throw new HttpException('Пользователь или роль не найдены', HttpStatus.NOT_FOUND)
@@ -45,14 +45,14 @@ export class UserService {
 		
 	}
 
-	async changeCity(dto: ChangeCityDto) {
+	async changeCity(dto: ChangeCityDto): Promise<User> {
 		try {
 			const user = await this.userModel.findById(dto.userId)
 			const city = await this.cityService.getCityById(dto.value)
 
 			if (user && city) {
 				user.cityId = city._id
-				return await user.save()
+				return user.save()
 			}
 
 		} catch (error) {

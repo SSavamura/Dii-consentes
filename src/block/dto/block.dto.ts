@@ -4,13 +4,13 @@ export class BlockDto {
     
     readonly info: {
         title: string,
-        discription: string
+        description: string
     };
 
     readonly question: [{
         text: string, //текст вопроса
         answer: string[], //ответы
-        correct: number, //правильный
+        correct?: number, //правильный
         img?: string, //кортинка, если нужно
     }];
 

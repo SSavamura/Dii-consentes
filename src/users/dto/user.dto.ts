@@ -1,6 +1,7 @@
-import { IsEmail, IsString, Length } from "class-validator";
+import { IsEmail, IsEnum, IsMongoId, IsPhoneNumber, IsString, Length } from "class-validator";
+import { Role } from "../role.enum";
 
-export class UserDto {
+export class LoginUserDto {
 
 	@IsString({ message: 'Должно быть строкой' })
 	@IsEmail({}, { message: 'Некорректный Email' })
@@ -22,6 +23,9 @@ export class CreateUserDto {
 	@Length(8, 16, { message: 'Не меньше 8 и не больше 16' })
 	readonly password: string;
 
+	@IsPhoneNumber('RU')
+	readonly phone: string;
+
 	@IsString({ message: 'Должно быть строкой' })
 	readonly orgId? : string;
 
@@ -33,9 +37,11 @@ export class CreateUserDto {
 export class ChangeRoleDto {
 
 	@IsString({ message: 'Должно быть строкой' })
+	@IsEnum(Role)
 	readonly value: string;
 
 	@IsString({ message: 'Должно быть строкой' })
+	@IsMongoId()
 	readonly userId: string;
 	
 }

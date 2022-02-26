@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { BlockService } from './block.service';
 import { BlockDto } from './dto/block.dto';
 
@@ -10,6 +10,11 @@ export class BlockController {
 	@Post()
 	async Create(@Body() blockDto: BlockDto) {
 		return await this.blockService.create(blockDto)
+	}
+
+	@Get(':id')
+	async GetBlockById (@Param() params) {
+		return await this.blockService.getBlockById(params.id)
 	}
 
 }

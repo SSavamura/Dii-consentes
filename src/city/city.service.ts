@@ -25,7 +25,7 @@ export class CityService {
             throw new HttpException('Error', HttpStatus.NOT_FOUND)
         }
 
-        return await city.delete();
+        return city.delete();
     }
 
     async getCityById(cityId: string) {

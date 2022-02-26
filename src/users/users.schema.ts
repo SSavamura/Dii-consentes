@@ -15,6 +15,9 @@ export class User extends Document {
 
 	@Prop({ required: true, enum: Role, default: Role.User })
 	role: string;
+
+	@Prop({ required: true, unique: true })
+	phone: string;
 	
 	@Prop({ ref: Org.name })
 	orgId: MongooseSchema.Types.ObjectId;

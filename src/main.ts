@@ -19,6 +19,7 @@ async function bootstrap() {
     root: join(__dirname, '..', 'src', 'public'),
     prefix: '/',
   });
+  
   app.setViewEngine({
     engine: {
       handlebars: require('handlebars'),
@@ -32,7 +33,7 @@ async function bootstrap() {
     cookie: {
       path: '/',
       httpOnly: true,
-      maxAge: 1000 * 60 * 60 * 60 * 24
+      maxAge: 1000 * 60 * 60 * 24
     }
   });
 
