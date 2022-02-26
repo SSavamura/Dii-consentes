@@ -54,4 +54,4 @@ export class CompletedTest extends Document {
 
 }
 
-export const TestSchema = SchemaFactory.createForClass(CompletedTest);
+export const CompletedTestSchema = SchemaFactory.createForClass(CompletedTest);
