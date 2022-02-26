@@ -1,7 +1,7 @@
 import { Body, Controller, Get, HttpStatus, Post, Redirect, Req, Res, Session, UseGuards, UsePipes } from '@nestjs/common';
 import { Response } from 'express';
 import { ValidationPipe } from 'src/pipes/validation.pipe';
-import { CreateUserDto, UserDto } from 'src/users/dto/user.dto';
+import { CreateUserDto, LoginUserDto } from 'src/users/dto/user.dto';
 import { Role } from 'src/users/role.enum';
 import { AuthService } from './auth.service';
 import * as secureSession from 'fastify-secure-session';
@@ -18,7 +18,8 @@ export class AuthController {
 	@UsePipes(ValidationPipe)
 	@Redirect('http://localhost:5000/personal_area', HttpStatus.MOVED_PERMANENTLY)
 	@Post('login')
-	async login(@Body() userDto: UserDto, @Req() req) {
+	async login(@Body() userDto: LoginUserDto, @Req() req) {
+
 		const token = await this.authService.login(userDto)
 		const user = token.user
 		const tokenType = token.type

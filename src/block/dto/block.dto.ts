@@ -1,17 +1,29 @@
-export class BlockDto {
+export class AbilitiesBlockDto {
 
     readonly name: string;
     
-    readonly info: {
-        title: string,
-        description: string
-    };
+    readonly title: string;
+    readonly description: string;
 
     readonly question: [{
-        text: string, //текст вопроса
-        answer: string[], //ответы
-        correct?: number, //правильный
-        img?: string, //кортинка, если нужно
+
+        text: string;
+
+        type: string;
+
+        answer: string[];
+        correct: number;
+
+        img: string;
+
     }];
+
+}
+
+export class UpdateBlockDto {
+
+    readonly blockId: string;
+
+    readonly block: AbilitiesBlockDto;
 
 }
