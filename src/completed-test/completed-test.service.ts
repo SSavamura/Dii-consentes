@@ -1,6 +1,5 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { AbilitiesBlock } from 'src/block/block.schema';
-import { CompletedTestDto, UpdateUserTests } from './dto/completed-test.dto';
+import { CompletedTestDto, UpdateUserTestsDto } from './dto/completed-test.dto';
 import { CompletedTest } from './completed-test.schema';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
@@ -16,16 +15,9 @@ export class CompletedTestService {
 		return completedTest.save();
 	  }
 
-    async update(updateUserTestDto: UpdateUserTests){
-		try {
-			const NewCompletedTest = await this.completedTestModel.findById(updateUserTestDto.testId)
-
-			if (NewCompletedTest) {
-                
-				return NewCompletedTest.save()
-			}
-		} catch (error) {
-			throw new HttpException('Не пость хуйню', HttpStatus.NOT_FOUND)
-		}
+	  async update(updateUserTestsDto: UpdateUserTestsDto) {
+		const updateCompletedTest = await this.completedTestModel.findById(updateUserTestsDto.testId)
+		return updateCompletedTest.update(updateUserTestsDto.abilities)
+		 
 	}
 }
