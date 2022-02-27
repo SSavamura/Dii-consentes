@@ -3,30 +3,28 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { CompletedTestService } from 'src/completed-test/completed-test.service';
 import { CompletedTestDto } from 'src/completed-test/dto/completed-test.dto';
-import { AbilityQue } from './block.enum';
-import { AbilitiesBlock, Block, MotivationBlock, PersQualitiesBlock } from './block.schema';
-import { AbilitiesBlockDto, ResultBlockDto, UpdateBlockDto } from './dto/block.dto';
+import { Block } from './block.schema';
+import { BlockDto, ResultBlockDto, UpdateBlockDto } from './dto/block.dto';
+import { AbilityQue } from './questions.enum';
 
 @Injectable()
 export class BlockService {
 	
 	constructor(
-		@InjectModel(AbilitiesBlock.name) private readonly abilitiesModel: Model<AbilitiesBlock>,
-		@InjectModel(MotivationBlock.name) private readonly motivationModel: Model<MotivationBlock>,
-		@InjectModel(PersQualitiesBlock.name) private readonly persQualitiesModel: Model<PersQualitiesBlock>,
+		@InjectModel(Block.name) private readonly blockModel: Model<Block>,
 		private readonly completedTestService: CompletedTestService
 		) { }
 
-	async create(blockDto: AbilitiesBlockDto): Promise<AbilitiesBlock> {
+	async create(blockDto: BlockDto): Promise<Block> {
 
 		// TODO: Сделать поддержку всех видов блоков
 
-		const createdBlock = new this.abilitiesModel(blockDto);
+		const createdBlock = new this.blockModel(blockDto);
 		return createdBlock.save();
 	}
 
-	async delete(blockDto: AbilitiesBlockDto) {
-		const block = await this.abilitiesModel.findOne({ name: blockDto.name })
+	async delete(blockDto: BlockDto) {
+		const block = await this.blockModel.findOne({ name: blockDto.name })
 
 		if (!block) {
 			throw new HttpException('Error', HttpStatus.NOT_FOUND)
@@ -36,16 +34,16 @@ export class BlockService {
 	}
 
 	async getBlockById(blockId: string) {
-		return this.abilitiesModel.findById(blockId)
+		return this.blockModel.findById(blockId)
 	}
 
 	async updateBlock(blockDto: UpdateBlockDto) {
-		const block = await this.abilitiesModel.findById(blockDto.blockId)
+		const block = await this.blockModel.findById(blockDto.blockId)
 		return block.update(blockDto.block)
 	}
 
 	async CalcResult(blockDto: ResultBlockDto) {
-		const block = await this.abilitiesModel.findById(blockDto.blockId)
+		const block = await this.blockModel.findById(blockDto.blockId)
 
 		var abilitiesResult: CompletedTestDto["abilities"]
 

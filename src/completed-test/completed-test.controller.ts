@@ -1,6 +1,5 @@
-import { Body, Controller, Get, Post, Put, UseGuards } from '@nestjs/common';
-import {  CompletedTestDto, UpdateUserTestsDto } from './dto/completed-test.dto';
-
+import { Body, Controller, Post, Put, UseGuards } from '@nestjs/common';
+import {  CompletedTestDto, UpdateTestDto } from './dto/completed-test.dto';
 import { CompletedTestService } from './completed-test.service';
 import { Role } from 'src/users/role.enum';
 import { RoleGuard } from 'src/auth/roles.guard';
@@ -21,8 +20,8 @@ export class CompletedTestController {
     @Roles(Role.User, Role.Admin)
 	@UseGuards(RoleGuard)
 	@Put()
-	async update(@Body() updateUserTestsDto: UpdateUserTestsDto) {
-		return await this.сompletedTestService.update(updateUserTestsDto);
+	async update(@Body() updateTestsDto: UpdateTestDto) {
+		return await this.сompletedTestService.update(updateTestsDto);
 	}
 
 }
