@@ -13,7 +13,7 @@ export class BlockController {
 	}
 
 	@Get(':id')
-	async GetBlockById (@Param() params) {
+	async GetBlockById (@Param() params: any) {
 		return await this.blockService.getBlockById(params.id)
 	}
 

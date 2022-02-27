@@ -20,7 +20,7 @@ export class CompletedTestDto {
 
 }
 
-export class UpdateUserTests {
+export class UpdateTestDto {
     
     readonly testId: string;
 

@@ -1,6 +1,5 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { AbilitiesBlock } from 'src/block/block.schema';
-import { CompletedTestDto, UpdateUserTests } from './dto/completed-test.dto';
+import { CompletedTestDto, UpdateTestDto } from './dto/completed-test.dto';
 import { CompletedTest } from './completed-test.schema';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
@@ -14,18 +13,19 @@ export class CompletedTestService {
     async create(completedTestDto: CompletedTestDto): Promise<CompletedTest> {
 		const completedTest = new this.completedTestModel(completedTestDto);
 		return completedTest.save();
-	  }
+	}
 
-    async update(updateUserTestDto: UpdateUserTests){
+    async update(updateTestDto: UpdateTestDto){
 		try {
-			const NewCompletedTest = await this.completedTestModel.findById(updateUserTestDto.testId)
+			const completedTest = await this.completedTestModel.findById(updateTestDto.testId)
 
-			if (NewCompletedTest) {
-                
-				return NewCompletedTest.save()
+			if (completedTest || updateTestDto.abilities) {
+
+				return completedTest.abilities.update(updateTestDto.abilities)
+				
 			}
 		} catch (error) {
-			throw new HttpException('Не пость хуйню', HttpStatus.NOT_FOUND)
+			throw new HttpException('Тест не найден', HttpStatus.NOT_FOUND)
 		}
 	}
 }

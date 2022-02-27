@@ -1,29 +1,41 @@
 export class AbilitiesBlockDto {
 
-    readonly name: string;
-    
-    readonly title: string;
-    readonly description: string;
+	readonly name: string;
+	
+	readonly title: string;
+	readonly description: string;
 
-    readonly question: [{
+	readonly question: [{
 
-        text: string;
+		readonly text: string;
 
-        type: string;
+		readonly type: string;
 
-        answer: string[];
-        correct: number;
+		readonly answer: string[];
+		readonly correct: number;
 
-        img: string;
+		readonly img: string;
 
-    }];
+	}];
 
 }
 
 export class UpdateBlockDto {
 
-    readonly blockId: string;
+	readonly blockId: string;
 
-    readonly block: AbilitiesBlockDto;
+	readonly block: AbilitiesBlockDto;
+
+}
+
+export class ResultBlockDto {
+
+	readonly type: string;
+
+	readonly blockId: string;
+
+	readonly testId: string;
+
+	readonly answers: number[];
 
 }
