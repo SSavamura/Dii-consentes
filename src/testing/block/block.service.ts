@@ -5,7 +5,7 @@ import { CompletedTestService } from 'src/completed-test/completed-test.service'
 import { CompletedTestDto } from 'src/completed-test/dto/completed-test.dto';
 import { Block } from './block.schema';
 import { BlockDto, ResultBlockDto, UpdateBlockDto } from './dto/block.dto';
-import { AbilityQue } from './questions.enum';
+import { AbilityQue } from '../question/questions.enum';
 
 @Injectable()
 export class BlockService {
@@ -42,31 +42,31 @@ export class BlockService {
 		return block.update(blockDto.block)
 	}
 
-	async CalcResult(blockDto: ResultBlockDto) {
-		const block = await this.blockModel.findById(blockDto.blockId)
+	// async CalcResult(blockDto: ResultBlockDto) {
+	// 	const block = await this.blockModel.findById(blockDto.blockId)
 
-		var abilitiesResult: CompletedTestDto["abilities"]
+	// 	var abilitiesResult: CompletedTestDto["abilities"]
 
-		block.question.forEach((value, index) => {
+	// 	block.question.forEach((value, index) => {
 			
-			if (value.correct === blockDto.answers[index] ) {
-				if (value.type in AbilityQue) {
-					abilitiesResult[value.type] += 1
-				}
-			}
+	// 		if (value.correct === blockDto.answers[index] ) {
+	// 			if (value.type in AbilityQue) {
+	// 				abilitiesResult[value.type] += 1
+	// 			}
+	// 		}
 
-		})
+	// 	})
 
-		const completedTest: CompletedTestDto = {
+	// 	const completedTest: CompletedTestDto = {
 			
-			userId: blockDto.testId,
-			testId: blockDto.testId,
-			abilities: abilitiesResult
+	// 		userId: blockDto.testId,
+	// 		testId: blockDto.testId,
+	// 		abilities: abilitiesResult
 
-		}
+	// 	}
 
-		this.completedTestService.update(completedTest)
+	// 	this.completedTestService.update(completedTest)
 
-	}
+	// }
 
 }

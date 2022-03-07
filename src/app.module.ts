@@ -7,9 +7,10 @@ import { UserModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { CityModule } from './city/city.module';
 import { OrgModule } from './org/org.module';
-import { TestModule } from './test/test.module';
-import { BlockModule } from './block/block.module';
+import { TestModule } from './testing/test/test.module';
+import { BlockModule } from './testing/block/block.module';
 import { CompletedTestModule } from './completed-test/completed-test.module';
+import { QuestionModule } from './testing/question/question.module';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { CompletedTestModule } from './completed-test/completed-test.module';
 	TestModule,
 	BlockModule,
 	CompletedTestModule,
+	QuestionModule,
   ],
   controllers: [AppController],
   providers: [AppService],
