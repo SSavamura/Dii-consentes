@@ -11,7 +11,7 @@ async function bootstrap() {
   const app = await NestFactory.create<NestFastifyApplication>(
     AppModule,
     new FastifyAdapter(),
-    { bodyParser: true }
+    { bodyParser: true, cors: true }
     );
 
   // Временная шляпа, дабы работало ГЫ

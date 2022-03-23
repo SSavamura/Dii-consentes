@@ -17,22 +17,22 @@ export class QuestionService {
 	}
 
 	async delete(questionId: string) {
-        const question = await this.questionModel.findById(questionId)
+		const question = await this.questionModel.findById(questionId)
 
-        if (!question) {
-            throw new HttpException('Error', HttpStatus.NOT_FOUND)
-        }
+		if (!question) {
+			throw new HttpException('Error', HttpStatus.NOT_FOUND)
+		}
 
-        return question.delete();
-    }
+		return question.delete();
+	}
 
 	async update(updateQuestionDto: UpdateQuestionDto) {
-        const question = await this.questionModel.findById(updateQuestionDto.id)
+		const question = await this.questionModel.findById(updateQuestionDto.id)
 
-        if (!question) {
-            throw new HttpException('Error', HttpStatus.NOT_FOUND)
-        }
+		if (!question) {
+			throw new HttpException('Error', HttpStatus.NOT_FOUND)
+		}
 
-        return question.update(updateQuestionDto);
-    }
+		return question.update(updateQuestionDto);
+	}
 }

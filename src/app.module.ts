@@ -11,6 +11,7 @@ import { TestModule } from './testing/test/test.module';
 import { BlockModule } from './testing/block/block.module';
 import { CompletedTestModule } from './completed-test/completed-test.module';
 import { QuestionModule } from './testing/question/question.module';
+import { ProfessionModule } from './testing/profession/profession.module';
 
 @Module({
   imports: [
@@ -26,6 +27,7 @@ import { QuestionModule } from './testing/question/question.module';
 	BlockModule,
 	CompletedTestModule,
 	QuestionModule,
+	ProfessionModule,
   ],
   controllers: [AppController],
   providers: [AppService],
