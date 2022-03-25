@@ -47,15 +47,16 @@ header .btns {
     display: -webkit-flex;
     display: -ms-flex;
     display: flex;
+    text-decoration: none;
     align-items: center;
-    background-color: #FFC973;
+    background-color: #9339FA;
     border-radius: 24px;
     -webkit-transition: all .4s ease;
     -o-transition: all;
     transition: all .4s ease;
 }
 header .btns:hover {
-    background-color: #FFFFB7;
+    background-color: #d4aeff;
 }
 
 header .btns>a {
@@ -64,6 +65,16 @@ header .btns>a {
     padding: 5px 5px;
     padding: 6px 16px;
     }
+
+.logo_text{
+    display: flex;
+}
+
+.logo_text h1{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
 /* Подвал сайта */
 footer {
     display: flex;

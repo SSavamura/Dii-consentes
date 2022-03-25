@@ -33,6 +33,11 @@ h1{
      align-self: center;
  }
 
+ h3{
+     font-size: 20px;
+     font-weight: 500;
+ }
+
 #page_between_test {
      display: flex;
      flex-direction: column;
@@ -43,7 +48,7 @@ h1{
      flex-direction: column;
      align-items: center;
  }
- .description_motivation p{
+ .subtitle {
     font-size: 55px;
     color: #005CA0;
     padding-bottom: 40px;
@@ -179,4 +184,19 @@ input:checked + label{
     width: 80px;
     height: 80px;
     margin: 30px 45px;
+}
+
+/* тело описания результатов теста */
+
+.description{
+    width: 1146px;
+    margin-left: 200px;
+}
+
+.main{
+    margin-top: 80px;
+}
+
+.description p{
+   line-height: 160%;
 }
